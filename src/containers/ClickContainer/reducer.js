@@ -1,4 +1,4 @@
-import { INCREMENT } from './constant';
+import { DECREMENT, INCREMENT } from '../ClickContainer/constant';
 
 export const initialState = {
   counter: 0,
@@ -13,5 +13,10 @@ export default function homeContainerReducer(state = initialState, action) {
       };
     default:
       return state;
+    case DECREMENT:
+      return {
+        ...state,
+        counter: Math.max(0, state.counter - 1),
+      };
   }
 }
